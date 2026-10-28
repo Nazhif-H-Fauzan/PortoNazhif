@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nazhif Hafidz Fauzan | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans antialiased overflow-x-hidden theme-bg">
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow hidden md:block" id="cursorGlow"></div>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-5 md:px-10 py-4 flex items-center justify-between theme-nav backdrop-blur-md border-b theme-border">
+    <a href="#home" class="font-display font-semibold text-[15px] tracking-tight hover:opacity-70 transition-opacity">
+      Nazhif H. Fauzan
+    </a>
+
+    <div class="hidden md:flex items-center gap-8 text-[12px] tracking-[0.18em] font-medium uppercase">
+      <a href="#home" class="nav-link active opacity-90">Home</a>
+      <a href="#works" class="nav-link opacity-55 hover:opacity-100 transition">Works</a>
+      <a href="#about" class="nav-link opacity-55 hover:opacity-100 transition">About</a>
+      <a href="#skills" class="nav-link opacity-55 hover:opacity-100 transition">Skills</a>
+      <a href="#contact" class="nav-link opacity-55 hover:opacity-100 transition">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <!-- Theme Toggle -->
+      <button id="themeToggle" aria-label="Toggle theme" class="w-10 h-10 rounded-full border theme-border flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 relative overflow-hidden">
+        <!-- Moon icon (shown in light mode → click to go dark) -->
+        <svg id="iconMoon" class="w-4.5 h-4.5 absolute opacity-0 scale-50 transition-all duration-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+        <!-- Sun icon (shown in dark mode → click to go light) -->
+        <svg id="iconSun" class="w-5 h-5 absolute transition-all duration-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4"/>
+          <path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+      </button>
+
+      <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2">
+        <span class="w-5 h-0.5 bg-current transition-all duration-300 block"></span>
+        <span class="w-5 h-0.5 bg-current transition-all duration-300 block"></span>
+        <span class="w-5 h-0.5 bg-current transition-all duration-300 block"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 theme-bg/95 backdrop-blur-xl flex flex-col items-center justify-center gap-7 text-xl tracking-[0.2em] uppercase font-display font-medium opacity-0 pointer-events-none transition-opacity duration-400">
+    <a href="#home" class="mobile-link hover:opacity-60 transition">Home</a>
+    <a href="#works" class="mobile-link hover:opacity-60 transition">Works</a>
+    <a href="#about" class="mobile-link hover:opacity-60 transition">About</a>
+    <a href="#skills" class="mobile-link hover:opacity-60 transition">Skills</a>
+    <a href="#contact" class="mobile-link hover:opacity-60 transition">Contact</a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Rings -->
+    <div class="absolute inset-0 pointer-events-none opacity-40">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[720px] rounded-full border theme-border"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border theme-border"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full border theme-border"></div>
+    </div>
+
+    <!-- Stars (dark only) -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="star absolute top-[12%] left-[18%] w-1 h-1 rounded-full bg-white"></div>
+      <div class="star absolute top-[28%] left-[72%] w-1.5 h-1.5 rounded-full bg-white" style="animation-delay:.6s"></div>
+      <div class="star absolute top-[58%] left-[12%] w-1 h-1 rounded-full bg-white" style="animation-delay:1.1s"></div>
+      <div class="star absolute top-[78%] left-[82%] w-1 h-1 rounded-full bg-white" style="animation-delay:1.6s"></div>
+      <div class="star absolute top-[38%] left-[48%] w-0.5 h-0.5 rounded-full bg-white" style="animation-delay:2s"></div>
+      <div class="star absolute top-[18%] left-[88%] w-1 h-1 rounded-full bg-white" style="animation-delay:.9s"></div>
+    </div>
+
+    <div class="w-full max-w-6xl mx-auto px-6 md:px-14 lg:px-20 relative z-10 grid md:grid-cols-2 gap-12 lg:gap-20 items-center pt-16">
+      <!-- Left -->
+      <div class="space-y-5 md:pl-6 lg:pl-12">
+        <div class="overflow-hidden">
+          <h1 class="text-[clamp(2.8rem,8vw,5.5rem)] font-display font-bold leading-[0.92] tracking-tight opacity-0 animate-fade-up" style="animation-delay:.15s;animation-fill-mode:forwards">
+            NAZHIF
+          </h1>
+        </div>
+        <div class="overflow-hidden">
+          <h1 class="text-[clamp(2.8rem,8vw,5.5rem)] font-display font-bold leading-[0.92] tracking-tight opacity-0 animate-fade-up" style="animation-delay:.3s;animation-fill-mode:forwards">
+            HAFIDZ
+          </h1>
+        </div>
+        <div class="overflow-hidden">
+          <h1 class="text-[clamp(2.8rem,8vw,5.5rem)] font-display font-bold leading-[0.92] tracking-tight opacity-0 animate-fade-up" style="animation-delay:.45s;animation-fill-mode:forwards">
+            FAUZAN
+          </h1>
+        </div>
+
+        <div class="flex items-center gap-3 opacity-0 animate-fade-up" style="animation-delay:.6s;animation-fill-mode:forwards">
+          <div class="w-10 h-[2px]" style="background:var(--accent)"></div>
+          <div class="w-5 h-[2px] opacity-50" style="background:var(--accent)"></div>
+        </div>
+
+        <p class="theme-soft text-base md:text-lg font-normal tracking-wide opacity-0 animate-fade-up" style="animation-delay:.75s;animation-fill-mode:forwards">
+          web developer / frontend enthusiast.
+        </p>
+      </div>
+
+      <!-- Right — Orb (Moon / Sun) -->
+      <div class="relative flex justify-center items-center opacity-0 animate-fade-in" style="animation-delay:.4s;animation-fill-mode:forwards">
+        <div class="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
+          <!-- Orb -->
+          <div id="orb" class="absolute inset-0 rounded-full animate-float" style="background:var(--orb); box-shadow:0 0 80px var(--orb-glow)">
+            <!-- Moon craters -->
+            <div class="moon-crater absolute top-[18%] left-[22%] w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/25"></div>
+            <div class="moon-crater absolute top-[42%] left-[52%] w-6 h-6 md:w-8 md:h-8 rounded-full bg-white/20"></div>
+            <div class="moon-crater absolute top-[58%] left-[28%] w-4 h-4 md:w-5 md:h-5 rounded-full bg-white/20"></div>
+          </div>
+
+          <!-- Sun rays (light mode) -->
+          <div class="sun-ray absolute inset-[-20%] animate-spin-slow pointer-events-none">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-8 rounded-full opacity-40" style="background:var(--orb)"></div>
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-8 rounded-full opacity-40" style="background:var(--orb)"></div>
+            <div class="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-1 rounded-full opacity-40" style="background:var(--orb)"></div>
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-8 h-1 rounded-full opacity-40" style="background:var(--orb)"></div>
+            <div class="absolute top-[12%] left-[12%] w-1 h-6 rounded-full opacity-30 rotate-45" style="background:var(--orb)"></div>
+            <div class="absolute top-[12%] right-[12%] w-1 h-6 rounded-full opacity-30 -rotate-45" style="background:var(--orb)"></div>
+            <div class="absolute bottom-[12%] left-[12%] w-1 h-6 rounded-full opacity-30 -rotate-45" style="background:var(--orb)"></div>
+            <div class="absolute bottom-[12%] right-[12%] w-1 h-6 rounded-full opacity-30 rotate-45" style="background:var(--orb)"></div>
+          </div>
+
+          <!-- Clouds -->
+          <div class="cloud absolute -bottom-3 -left-8 w-36 h-7 rounded-full blur-[1px]" style="background:var(--cloud); opacity:.85"></div>
+          <div class="cloud-2 absolute bottom-6 -right-6 w-28 h-5 rounded-full blur-[1px]" style="background:var(--cloud); opacity:.75"></div>
+          <div class="cloud absolute top-10 -right-12 w-24 h-4 rounded-full blur-[1px]" style="background:var(--cloud); opacity:.65"></div>
+          <div class="cloud-2 absolute top-1/3 -left-10 w-32 h-6 rounded-full blur-[1px]" style="background:var(--cloud); opacity:.8"></div>
+
+          <!-- Label -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="font-display font-semibold text-lg md:text-xl tracking-[0.28em]" style="color:var(--accent); text-shadow:0 2px 12px rgba(0,0,0,.15)">
+              PORTFOLIO
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 left-5 md:left-10 flex flex-col items-center gap-2 opacity-50">
+      <span class="text-[9px] tracking-[0.28em] uppercase" style="writing-mode:vertical-rl; transform:rotate(180deg)">Scroll</span>
+      <div class="w-px h-12 bg-gradient-to-b from-current to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- ========== WORKS ========== -->
+  <section id="works" class="min-h-screen py-20 md:py-28 relative">
+    <div class="container mx-auto px-5 md:px-10">
+      <div class="reveal mb-14 md:mb-20">
+        <span class="text-xs tracking-[0.3em] uppercase font-medium" style="color:var(--accent)">01</span>
+        <h2 class="text-3xl md:text-5xl font-display font-bold mt-1.5 tracking-tight">Selected Works</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-7 md:gap-10">
+        <!-- Card template x4 -->
+        <a href="#" class="group reveal block">
+          <div class="relative overflow-hidden rounded-2xl theme-card aspect-[4/3] mb-5 border theme-border">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,var(--accent-soft),transparent)"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center space-y-2.5">
+                <div class="w-14 h-14 mx-auto rounded-full border theme-border flex items-center justify-center group-hover:scale-110 transition-all duration-500" style="border-color:var(--border)">
+                  <svg class="w-5 h-5 theme-soft group-hover:opacity-100 transition" style="color:var(--accent)" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </div>
+                <p class="text-xs tracking-[0.2em] uppercase theme-soft">View Project</p>
+              </div>
+            </div>
+            <div class="absolute top-5 left-5 text-5xl font-display font-bold opacity-[0.04]">01</div>
+          </div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-lg md:text-xl font-display font-semibold group-hover:opacity-70 transition-opacity">Landing Page Agency</h3>
+              <p class="theme-soft text-sm mt-0.5 tracking-wide">HTML / CSS / JS</p>
+            </div>
+            <span class="text-[11px] theme-soft tracking-widest mt-1 opacity-60">2024</span>
+          </div>
+        </a>
+
+        <a href="#" class="group reveal block" style="transition-delay:.12s">
+          <div class="relative overflow-hidden rounded-2xl theme-card aspect-[4/3] mb-5 border theme-border">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,var(--accent-soft),transparent)"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center space-y-2.5">
+                <div class="w-14 h-14 mx-auto rounded-full border theme-border flex items-center justify-center group-hover:scale-110 transition-all duration-500">
+                  <svg class="w-5 h-5" style="color:var(--accent)" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </div>
+                <p class="text-xs tracking-[0.2em] uppercase theme-soft">View Project</p>
+              </div>
+            </div>
+            <div class="absolute top-5 left-5 text-5xl font-display font-bold opacity-[0.04]">02</div>
+          </div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-lg md:text-xl font-display font-semibold group-hover:opacity-70 transition-opacity">Company Profile PHP</h3>
+              <p class="theme-soft text-sm mt-0.5 tracking-wide">PHP / MySQL / JS</p>
+            </div>
+            <span class="text-[11px] theme-soft tracking-widest mt-1 opacity-60">2024</span>
+          </div>
+        </a>
+
+        <a href="#" class="group reveal block" style="transition-delay:.24s">
+          <div class="relative overflow-hidden rounded-2xl theme-card aspect-[4/3] mb-5 border theme-border">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,var(--accent-soft),transparent)"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center space-y-2.5">
+                <div class="w-14 h-14 mx-auto rounded-full border theme-border flex items-center justify-center group-hover:scale-110 transition-all duration-500">
+                  <svg class="w-5 h-5" style="color:var(--accent)" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </div>
+                <p class="text-xs tracking-[0.2em] uppercase theme-soft">View Project</p>
+              </div>
+            </div>
+            <div class="absolute top-5 left-5 text-5xl font-display font-bold opacity-[0.04]">03</div>
+          </div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-lg md:text-xl font-display font-semibold group-hover:opacity-70 transition-opacity">Dashboard Admin</h3>
+              <p class="theme-soft text-sm mt-0.5 tracking-wide">HTML / CSS / JS / PHP</p>
+            </div>
+            <span class="text-[11px] theme-soft tracking-widest mt-1 opacity-60">2025</span>
+          </div>
+        </a>
+
+        <a href="#" class="group reveal block" style="transition-delay:.36s">
+          <div class="relative overflow-hidden rounded-2xl theme-card aspect-[4/3] mb-5 border theme-border">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,var(--accent-soft),transparent)"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center space-y-2.5">
+                <div class="w-14 h-14 mx-auto rounded-full border theme-border flex items-center justify-center group-hover:scale-110 transition-all duration-500">
+                  <svg class="w-5 h-5" style="color:var(--accent)" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </div>
+                <p class="text-xs tracking-[0.2em] uppercase theme-soft">View Project</p>
+              </div>
+            </div>
+            <div class="absolute top-5 left-5 text-5xl font-display font-bold opacity-[0.04]">04</div>
+          </div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-lg md:text-xl font-display font-semibold group-hover:opacity-70 transition-opacity">Portfolio Website</h3>
+              <p class="theme-soft text-sm mt-0.5 tracking-wide">HTML / Tailwind / JS</p>
+            </div>
+            <span class="text-[11px] theme-soft tracking-widest mt-1 opacity-60">2025</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="min-h-screen py-20 md:py-28 relative theme-bg-alt">
+    <div class="container mx-auto px-5 md:px-10">
+      <div class="reveal mb-14">
+        <span class="text-xs tracking-[0.3em] uppercase font-medium" style="color:var(--accent)">02</span>
+        <h2 class="text-3xl md:text-5xl font-display font-bold mt-1.5 tracking-tight">About Me</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-14 items-start">
+        <div class="reveal space-y-7">
+          <p class="text-xl md:text-2xl font-display font-medium leading-snug theme-soft">
+            I love <span class="theme-text">Code</span>, <span class="theme-text">Design</span>, and <span class="theme-text">Problem Solving</span>.
+          </p>
+          <div class="space-y-5 theme-soft leading-relaxed text-[15px]">
+            <p>Halo! Saya Nazhif Hafidz Fauzan, calon web developer yang sedang fokus membangun antarmuka bersih, cepat, dan enak dipakai.</p>
+            <p>Saya sedang membangun fondasi di HTML, CSS, JavaScript, dan PHP melalui project latihan. Saya senang mengubah ide menjadi website yang fungsional dengan perhatian pada detail visual dan UX.</p>
+            <p>Sebagai fresh graduate, saya terbuka untuk belajar, menerima arahan, dan berkembang bersama tim.</p>
+          </div>
+        </div>
+
+        <div class="reveal space-y-8" style="transition-delay:.15s">
+          <div>
+            <h3 class="text-xs tracking-[0.25em] uppercase font-medium mb-3" style="color:var(--accent)">Who I Am</h3>
+            <p class="text-2xl md:text-3xl font-display font-bold">Nazhif Hafidz Fauzan</p>
+            <p class="theme-soft mt-1.5 text-sm">Fresh Graduate · Frontend Enthusiast</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl theme-card border theme-border hover:border-[var(--accent)] transition-colors duration-300">
+              <p class="text-2xl font-display font-bold" style="color:var(--accent)">Fresh</p>
+              <p class="text-xs theme-soft mt-1">Graduate</p>
+            </div>
+            <div class="p-4 rounded-xl theme-card border theme-border hover:border-[var(--accent)] transition-colors duration-300">
+              <p class="text-2xl font-display font-bold" style="color:var(--accent)">Latihan</p>
+              <p class="text-xs theme-soft mt-1">Project</p>
+            </div>
+            <div class="p-4 rounded-xl theme-card border theme-border hover:border-[var(--accent)] transition-colors duration-300">
+              <p class="text-2xl font-display font-bold" style="color:var(--accent)">4</p>
+              <p class="text-xs theme-soft mt-1">Core Skills</p>
+            </div>
+            <div class="p-4 rounded-xl theme-card border theme-border hover:border-[var(--accent)] transition-colors duration-300">
+              <p class="text-2xl font-display font-bold" style="color:var(--accent)">∞</p>
+              <p class="text-xs theme-soft mt-1">Curiosity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="min-h-screen py-20 md:py-28 relative">
+    <div class="container mx-auto px-5 md:px-10">
+      <div class="reveal mb-14">
+        <span class="text-xs tracking-[0.3em] uppercase font-medium" style="color:var(--accent)">03</span>
+        <h2 class="text-3xl md:text-5xl font-display font-bold mt-1.5 tracking-tight">Skill Set</h2>
+        <p class="theme-soft max-w-xl mt-4 leading-relaxed">Kemampuan yang sedang saya pelajari dan kembangkan melalui project latihan.</p>
+      </div>
+
+      <div class="max-w-2xl space-y-9">
+        <div class="reveal skill-item">
+          <div class="flex justify-between items-end mb-2.5">
+            <div>
+              <h3 class="font-display font-semibold text-lg">HTML / CSS</h3>
+              <p class="text-xs theme-soft mt-0.5">Dasar · terus berlatih</p>
+            </div>
+            <span class="font-display font-semibold text-sm" style="color:var(--accent)">Dasar</span>
+          </div>
+          <div class="h-1.5 rounded-full overflow-hidden" style="background:var(--border)">
+            <div class="skill-bar h-full rounded-full" style="--target:55%; background:var(--accent)" role="progressbar" aria-label="HTML dan CSS: level dasar" aria-valuemin="0" aria-valuemax="100" aria-valuetext="Level dasar"></div>
+          </div>
+        </div>
+
+        <div class="reveal skill-item" style="transition-delay:.08s">
+          <div class="flex justify-between items-end mb-2.5">
+            <div>
+              <h3 class="font-display font-semibold text-lg">JavaScript</h3>
+              <p class="text-xs theme-soft mt-0.5">Dasar · terus berlatih</p>
+            </div>
+            <span class="font-display font-semibold text-sm" style="color:var(--accent)">Dasar</span>
+          </div>
+          <div class="h-1.5 rounded-full overflow-hidden" style="background:var(--border)">
+            <div class="skill-bar h-full rounded-full" style="--target:45%; background:var(--accent)" role="progressbar" aria-label="JavaScript: level dasar" aria-valuemin="0" aria-valuemax="100" aria-valuetext="Level dasar"></div>
+          </div>
+        </div>
+
+        <div class="reveal skill-item" style="transition-delay:.16s">
+          <div class="flex justify-between items-end mb-2.5">
+            <div>
+              <h3 class="font-display font-semibold text-lg">PHP</h3>
+              <p class="text-xs theme-soft mt-0.5">Sedang dipelajari</p>
+            </div>
+            <span class="font-display font-semibold text-sm" style="color:var(--accent)">Pemula</span>
+          </div>
+          <div class="h-1.5 rounded-full overflow-hidden" style="background:var(--border)">
+            <div class="skill-bar h-full rounded-full" style="--target:35%; background:var(--accent)" role="progressbar" aria-label="PHP: level pemula" aria-valuemin="0" aria-valuemax="100" aria-valuetext="Level pemula"></div>
+          </div>
+        </div>
+
+        <div class="reveal skill-item" style="transition-delay:.24s">
+          <div class="flex justify-between items-end mb-2.5">
+            <div>
+              <h3 class="font-display font-semibold text-lg">Microsoft Word</h3>
+              <p class="text-xs theme-soft mt-0.5">Terbiasa untuk tugas kuliah</p>
+            </div>
+            <span class="font-display font-semibold text-sm" style="color:var(--accent)">Terbiasa</span>
+          </div>
+          <div class="h-1.5 rounded-full overflow-hidden" style="background:var(--border)">
+            <div class="skill-bar h-full rounded-full" style="--target:65%; background:var(--accent)" role="progressbar" aria-label="Microsoft Word: terbiasa" aria-valuemin="0" aria-valuemax="100" aria-valuetext="Terbiasa"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal mt-16 flex flex-wrap gap-2.5" style="transition-delay:.3s">
+        <span class="px-3.5 py-1.5 rounded-full border theme-border text-xs theme-soft hover:border-[var(--accent)] transition-colors duration-300">Tailwind CSS</span>
+        <span class="px-3.5 py-1.5 rounded-full border theme-border text-xs theme-soft hover:border-[var(--accent)] transition-colors duration-300">Responsive</span>
+        <span class="px-3.5 py-1.5 rounded-full border theme-border text-xs theme-soft hover:border-[var(--accent)] transition-colors duration-300">MySQL</span>
+        <span class="px-3.5 py-1.5 rounded-full border theme-border text-xs theme-soft hover:border-[var(--accent)] transition-colors duration-300">Git</span>
+        <span class="px-3.5 py-1.5 rounded-full border theme-border text-xs theme-soft hover:border-[var(--accent)] transition-colors duration-300">UI Basics</span>
+        <span class="px-3.5 py-1.5 rounded-full border theme-border text-xs theme-soft hover:border-[var(--accent)] transition-colors duration-300">Figma</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="min-h-screen py-20 md:py-28 relative flex items-center">
+    <div class="container mx-auto px-5 md:px-10">
+      <div class="reveal mb-14">
+        <span class="text-xs tracking-[0.3em] uppercase font-medium" style="color:var(--accent)">04</span>
+        <h2 class="text-3xl md:text-5xl font-display font-bold mt-1.5 tracking-tight">Get In Touch</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-14 items-start">
+        <div class="reveal space-y-7">
+          <p class="theme-soft leading-relaxed max-w-sm text-[15px]">
+            Tertarik kerja sama atau sekadar ngobrol soal project? Langsung hubungi saya.
+          </p>
+
+          <div class="space-y-4">
+            <a href="mailto:nazhif@example.com" class="group flex items-center gap-3.5 text-[15px] hover:opacity-70 transition-opacity">
+              <div class="w-11 h-11 rounded-full border theme-border flex items-center justify-center group-hover:border-[var(--accent)] transition-colors">
+                <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              nanazuu01@gmail.com
+            </a>
+            <a href="#" class="group flex items-center gap-3.5 text-[15px] hover:opacity-70 transition-opacity">
+              <div class="w-11 h-11 rounded-full border theme-border flex items-center justify-center group-hover:border-[var(--accent)] transition-colors">
+                <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </div>
+              @napipaw
+            </a>
+            <a href="#" class="group flex items-center gap-3.5 text-[15px] hover:opacity-70 transition-opacity">
+              <div class="w-11 h-11 rounded-full border theme-border flex items-center justify-center group-hover:border-[var(--accent)] transition-colors">
+                <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </div>
+              github.com/Nazhif-H-Fauzan
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay:.15s">
+          <form class="space-y-5" onsubmit="event.preventDefault(); alert('Terima kasih! Pesanmu sudah diterima (demo).')">
+            <div>
+              <label class="block text-xs theme-soft mb-1.5 tracking-wide uppercase">Nama</label>
+              <input type="text" required class="w-full bg-transparent border-b theme-border py-2.5 text-sm focus:outline-none transition-colors duration-300 placeholder:opacity-40" style="border-color:var(--border)" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" placeholder="Nama lengkap">
+            </div>
+            <div>
+              <label class="block text-xs theme-soft mb-1.5 tracking-wide uppercase">Email</label>
+              <input type="email" required class="w-full bg-transparent border-b theme-border py-2.5 text-sm focus:outline-none transition-colors duration-300 placeholder:opacity-40" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" placeholder="email@example.com">
+            </div>
+            <div>
+              <label class="block text-xs theme-soft mb-1.5 tracking-wide uppercase">Pesan</label>
+              <textarea rows="3" required class="w-full bg-transparent border-b theme-border py-2.5 text-sm focus:outline-none transition-colors duration-300 placeholder:opacity-40 resize-none" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" placeholder="Ceritakan project-mu..."></textarea>
+            </div>
+            <button type="submit" class="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-display font-semibold text-sm tracking-wide text-white transition-all duration-400 hover:shadow-lg" style="background:var(--accent)">
+              Kirim Pesan
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 border-t theme-border">
+    <div class="container mx-auto px-5 md:px-10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs theme-soft">
+      <p>© 2025 Nazhif Hafidz Fauzan</p>
+      <p class="tracking-wider">Built with Tailwind</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
